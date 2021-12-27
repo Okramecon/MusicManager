@@ -70,6 +70,12 @@ namespace MusicManager.ViewModels
             set => Model.ReleaseDate = value;
         }
 
+        public string Url
+        { 
+            get => Model.Url;
+            set => Model.Url = value; 
+        }
+
         [Required(ErrorMessage = "Укажите автора песни.")]
         [Display(Name = "Автор")]
         public int AuthorId

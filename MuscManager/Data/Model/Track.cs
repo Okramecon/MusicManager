@@ -17,6 +17,8 @@ namespace MusicManager.Data.Model
 
         public DateTime ReleaseDate { get; set; }
 
+        public string Url { get; set; }
+
         [Required]
         [DefaultValue(1)]
         public int AuthorId { get; set; }
