@@ -110,3 +110,13 @@ ul, #myUL {
 .active {
     display: block;
 }
+
+
+.main-audio-control {
+    width: 100%;
+}
+
+.play-image {
+    width: 32px;
+    height: 32px;
+}

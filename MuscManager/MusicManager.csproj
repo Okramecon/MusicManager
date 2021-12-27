@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Locals\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

@@ -68,7 +68,7 @@ namespace MusicManager.Controllers
                         { PlaylistId = playlistId, TrackId = track.Model.Id, Track = track.Model });
                 }
 
-                await UploadtrackAsync(track);
+                await UploadTrackAsync(track);
 
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -77,10 +77,10 @@ namespace MusicManager.Controllers
             await LoadSelectListItems(track);
             return View(track);
         }
-        public async Task UploadtrackAsync(TrackViewModel track)
+        public async Task UploadTrackAsync(TrackViewModel track)
         {
             var file = Path.Combine(Environment.CurrentDirectory, "wwwroot/Locals", track.Upload.FileName);
-            track.Url = file;
+            track.Url = "Locals/" + track.Upload.FileName;
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await track.Upload.CopyToAsync(fileStream);
