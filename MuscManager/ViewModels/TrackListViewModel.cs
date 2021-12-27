@@ -32,13 +32,17 @@ namespace MusicManager.ViewModels
             [Required(ErrorMessage = "Укажите период выхода трека")]
             [Display(Name = "Время выхода от: ")]
             public DateTime ReleaseDateFrom { get; set; } = DateTime.MinValue;
+
             [Required(ErrorMessage = "Укажите период выхода трека")]
             [Display(Name = "Время выхода до: ")]
             public DateTime ReleaseDateTo { get; set; } = DateTime.Now;
+
             [Display(Name = "Автор/Испольнитель")]
             public string AuthorName { get; set; }
+
             [Display(Name = "Название альбома")]
             public string AlbumName { get; set; }
+
             [Display(Name = "Жанры")]
             public IEnumerable<int> Genres { get; set; }
         }
