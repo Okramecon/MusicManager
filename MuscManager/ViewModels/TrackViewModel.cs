@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using MusicManager.Data;
@@ -95,6 +99,9 @@ namespace MusicManager.ViewModels
         public ICollection<SelectListItem> AvailableAuthors { get; set; }
         public ICollection<SelectListItem> AvailableAlbums { get; set; }
         public ICollection<SelectListItem> AvalilablePlaylists { get; set; }
+        [BindProperty]
+        public IFormFile Upload { get; set; }
+        public string url { get; set; }
 
     }
 }

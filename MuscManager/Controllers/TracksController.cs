@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -67,12 +68,22 @@ namespace MusicManager.Controllers
                         { PlaylistId = playlistId, TrackId = track.Model.Id, Track = track.Model });
                 }
 
+                await UploadtrackAsync(track);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
             await LoadSelectListItems(track);
             return View(track);
+        }
+        public async Task UploadtrackAsync(TrackViewModel track)
+        {
+            var file = Path.Combine(Environment.CurrentDirectory, "wwwroot/Locals", track.Upload.FileName);
+            using (var fileStream = new FileStream(file, FileMode.Create))
+            {
+                await track.Upload.CopyToAsync(fileStream);
+            }
         }
 
         private async Task LoadSelectListItems(TrackViewModel track)
