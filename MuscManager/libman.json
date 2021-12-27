@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "library": "bootstrap-select@1.13.14",
+      "destination": "wwwroot/lib/bootstrap-select/",
+      "files": [
+        "js/bootstrap-select.min.js",
+        "css/bootstrap-select.css",
+        "css/bootstrap-select.min.css",
+        "js/bootstrap-select.js"
+      ]
+    }
+  ]
+}

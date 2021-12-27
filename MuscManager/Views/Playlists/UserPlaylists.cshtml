@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MusicManager.ViewModels.PlaylistViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (ViewData.ContainsKey("userName"))
+{
+<span style="font-size: 24px">Плейлисты пользователя <b style="font-size: 30px">@ViewData["userName"]</b> </span>
+}
+
+<ul id="myUL">
+    @foreach (var playlist in Model)
+    {
+        <li>
+            <span class="caret caret-down">
+                @playlist.Name
+                <a asp-action="Edit" asp-route-id="@playlist.Id">Изменить</a> |
+                <a asp-action="Delete" asp-route-id="@playlist.Id">Удалить</a>
+            </span>
+            <ul class="nested active">
+                @foreach (var track in playlist.Tracks)
+                {
+                    <li>
+                        <span>@track.Name</span>
+                        <span>
+                            <a asp-action="Remove" asp-route-id="@track.Id" asp-route-playlistId="@playlist.Id">Убрать из плейлиста</a>
+                        </span>
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
+
+
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
