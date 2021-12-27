@@ -80,6 +80,7 @@ namespace MusicManager.Controllers
         public async Task UploadtrackAsync(TrackViewModel track)
         {
             var file = Path.Combine(Environment.CurrentDirectory, "wwwroot/Locals", track.Upload.FileName);
+            track.Url = file;
             using (var fileStream = new FileStream(file, FileMode.Create))
             {
                 await track.Upload.CopyToAsync(fileStream);
