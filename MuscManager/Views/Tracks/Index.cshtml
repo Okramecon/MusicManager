@@ -36,7 +36,7 @@
             <input asp-for="Filter.TrackName" class="form-control" />
             <span asp-validation-for="Filter.TrackName" class="text-danger"></span>
         </div>
-        <div class="form-group" style="display: inline-block">
+        @*<div class="form-group" style="display: inline-block">
             <label asp-for="Filter.ReleaseDateFrom" class="control-label"></label>
             <input asp-for="Filter.ReleaseDateFrom" class="form-control" />
             <span asp-validation-for="Filter.ReleaseDateFrom" class="text-danger"></span>
@@ -46,18 +46,18 @@
             <label asp-for="Filter.ReleaseDateTo" class="control-label"></label>
             <input asp-for="Filter.ReleaseDateTo" class="form-control" />
             <span asp-validation-for="Filter.ReleaseDateTo" class="text-danger"></span>
-        </div>
+        </div>*@
 
         <div class="form-group" style="display: inline-block">
             <label asp-for="Filter.AuthorName" class="control-label"></label>
             <input asp-for="Filter.AuthorName" class="form-control" />
             <span asp-validation-for="Filter.AuthorName" class="text-danger"></span>
         </div>
-        <div class="form-group" style="display: inline-block">
+        @*<div class="form-group" style="display: inline-block">
             <label asp-for="Filter.AlbumName" class="control-label"></label>
             <input asp-for="Filter.AlbumName" class="form-control" />
             <span asp-validation-for="Filter.AlbumName" class="text-danger"></span>
-        </div>
+        </div>*@
 
         <div class="form-group" style="display: inline-block">
             <label asp-for="Filter.Genres" class="control-label"></label>
@@ -88,15 +88,15 @@ else
                 <th>
                     @Html.DisplayNameFor(model => model.Tracks.First().Name)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Tracks.First().ReleaseDate)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Tracks.First().AuthorName)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Tracks.First().AlbumName)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Tracks.First().TrackGenres)
                 </th>
@@ -114,15 +114,15 @@ else
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.ReleaseDate)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.AuthorName)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.AlbumName)
-                    </td>
+                    </td>*@
                     <td>
                         @string.Join(", ", item.TrackGenres.Select(tg => Model.Genres[tg]))
                     </td>

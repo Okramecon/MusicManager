@@ -18,11 +18,11 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="ReleaseDate" class="control-label"></label>
                 <input asp-for="ReleaseDate" class="form-control" />
                 <span asp-validation-for="ReleaseDate" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="AuthorId" class="control-label"></label>
                 <select asp-for="AuthorId" asp-items="Model.AvailableAuthors" class="form-control">
@@ -30,20 +30,20 @@
                 </select>
                 <span asp-validation-for="AuthorId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="AlbumId" class="control-label"></label>
                 <select asp-for="AlbumId" asp-items="Model.AvailableAlbums" class="form-control">
                     <option value="">Выберите альбом</option>
                 </select>
                 <span asp-validation-for="AlbumId" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="TrackGenres" class="control-label"></label>
                 <select asp-for="TrackGenres" asp-items="Model.AvailableGenres" class="selectpicker" multiple>
                 </select>
                 <span asp-validation-for="TrackGenres" class="text-danger"></span>
             </div>
-            @if (Model.AvalilablePlaylists.Any())
+            @*@if (Model.AvalilablePlaylists.Any())
             {
                 <div class="form-group">
                     <label asp-for="TrackPlaylists" class="control-label"></label>
@@ -51,8 +51,10 @@
                     </select>
                     <span asp-validation-for="TrackPlaylists" class="text-danger"></span>
                 </div>
-            }
-            <input type="file" asp-for="Upload"/>
+            }*@
+            <div class="form-group">
+                <input type="file" asp-for="Upload"/>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
